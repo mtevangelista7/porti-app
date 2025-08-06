@@ -1,0 +1,201 @@
+@import "tailwindcss";
+@import "tw-animate-css";
+
+@custom-variant dark (&:is(.dark *));
+
+@theme {
+  /* Design System Color Palette */
+  --color-primary-bg: #0D1321; /* Dark Black - Primary Background */
+  --color-secondary-bg: #2D3142; /* Dark Navy Blue - Secondary Background */
+  --color-icon-text: #4A5568; /* Blue Gray - Icons/Secondary Text */
+  --color-aux-text: #7C8595; /* Medium Gray - Auxiliary Text */
+  --color-main-text: #A3ABBA; /* Light Gray - Main Text/Highlights */
+  
+  /* shadcn/ui system colors */
+  --color-background: hsl(var(--background));
+  --color-foreground: hsl(var(--foreground));
+  --color-card: hsl(var(--card));
+  --color-card-foreground: hsl(var(--card-foreground));
+  --color-popover: hsl(var(--popover));
+  --color-popover-foreground: hsl(var(--popover-foreground));
+  --color-muted: hsl(var(--muted));
+  --color-muted-foreground: hsl(var(--muted-foreground));
+  --color-accent: hsl(var(--accent));
+  --color-accent-foreground: hsl(var(--accent-foreground));
+  --color-destructive: hsl(var(--destructive));
+  --color-destructive-foreground: hsl(var(--destructive-foreground));
+  --color-border: hsl(var(--border));
+  --color-input: hsl(var(--input));
+  --color-ring: hsl(var(--ring));
+  --color-chart-1: hsl(var(--chart-1));
+  --color-chart-2: hsl(var(--chart-2));
+  --color-chart-3: hsl(var(--chart-3));
+  --color-chart-4: hsl(var(--chart-4));
+  --color-chart-5: hsl(var(--chart-5));
+  --color-sidebar: hsl(var(--sidebar));
+  --color-sidebar-foreground: hsl(var(--sidebar-foreground));
+  --color-sidebar-primary: hsl(var(--sidebar-primary));
+  --color-sidebar-primary-foreground: hsl(var(--sidebar-primary-foreground));
+  --color-sidebar-accent: hsl(var(--sidebar-accent));
+  --color-sidebar-accent-foreground: hsl(var(--sidebar-accent-foreground));
+  --color-sidebar-border: hsl(var(--sidebar-border));
+  --color-sidebar-ring: hsl(var(--sidebar-ring));
+  
+  /* Font families */
+  --font-sans: var(--font-poppins), ui-sans-serif, system-ui, sans-serif;
+  --font-mono: var(--font-geist-mono), ui-monospace, monospace;
+  
+  /* Border radius */
+  --radius: 0.625rem;
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+  
+  /* Enhanced animations and effects */
+  --animate-fade-in: fadeIn 0.5s ease-in-out;
+  --animate-slide-up: slideUp 0.5s ease-out;
+  --animate-float: float 6s ease-in-out infinite;
+  --animate-hover-scale: scale 0.2s ease-out;
+  --animate-shadow-hover: box-shadow 0.3s ease-out;
+  --animate-stagger-delay: 0.1s;
+}
+
+:root {
+  --radius: 0.625rem;
+  
+  /* Light theme - use new dark palette */
+  --background: 212 49% 8%; /* Dark Black #0D1321 */
+  --foreground: 218 11% 71%; /* Light Gray #A3ABBA for text */
+  --card: 220 15% 20%; /* Dark Navy Blue #2D3142 */
+  --card-foreground: 218 11% 71%; /* Light Gray #A3ABBA */
+  --popover: 220 15% 20%; /* Dark Navy Blue #2D3142 */
+  --popover-foreground: 218 11% 71%; /* Light Gray #A3ABBA */
+  --primary: 218 11% 71%; /* Light Gray #A3ABBA */
+  --primary-foreground: 212 49% 8%; /* Dark Black #0D1321 */
+  --secondary: 220 15% 20%; /* Dark Navy Blue #2D3142 */
+  --secondary-foreground: 218 11% 71%; /* Light Gray #A3ABBA */
+  --muted: 220 15% 20%; /* Dark Navy Blue #2D3142 */
+  --muted-foreground: 217 9% 45%; /* Medium Gray #7C8595 */
+  --accent: 218 11% 71%; /* Light Gray #A3ABBA */
+  --accent-foreground: 212 49% 8%; /* Dark Black #0D1321 */
+  --destructive: 0 84% 60%;
+  --destructive-foreground: 0 0% 98%;
+  --border: 220 9% 55%;
+  --input: 253 31% 25%;
+  --ring: 131 54% 78%;
+  --chart-1: 220 70% 50%;
+  --chart-2: 160 60% 45%;
+  --chart-3: 30 80% 55%;
+  --chart-4: 280 65% 60%;
+  --chart-5: 340 75% 55%;
+  --sidebar: 256 100% 14%;
+  --sidebar-foreground: 131 54% 78%;
+  --sidebar-primary: 131 54% 78%;
+  --sidebar-primary-foreground: 256 100% 14%;
+  --sidebar-accent: 253 31% 25%;
+  --sidebar-accent-foreground: 131 54% 78%;
+  --sidebar-border: 220 9% 55%;
+  --sidebar-ring: 131 54% 78%;
+}
+
+.dark {
+  /* Keep the same dark theme since portfolio should be dark by default */
+  --background: 256 100% 14%; /* Dark Purple #3A2449 */
+  --foreground: 131 54% 78%; /* Light Celadon for text */
+  --card: 220 15% 20%; /* Dark Navy Blue #2D3142 */
+  --card-foreground: 218 11% 71%; /* Light Gray #A3ABBA */
+  --popover: 220 15% 20%; /* Dark Navy Blue #2D3142 */
+  --popover-foreground: 218 11% 71%; /* Light Gray #A3ABBA */
+  --primary: 218 11% 71%; /* Light Gray #A3ABBA */
+  --primary-foreground: 212 49% 8%; /* Dark Black #0D1321 */
+  --secondary: 220 15% 20%; /* Dark Navy Blue #2D3142 */
+  --secondary-foreground: 218 11% 71%; /* Light Gray #A3ABBA */
+  --muted: 220 15% 20%; /* Dark Navy Blue #2D3142 */
+  --muted-foreground: 217 9% 45%; /* Medium Gray #7C8595 */
+  --accent: 218 11% 71%; /* Light Gray #A3ABBA */
+  --accent-foreground: 212 49% 8%; /* Dark Black #0D1321 */
+  --destructive: 0 84% 60%;
+  --destructive-foreground: 0 0% 98%;
+  --border: 220 9% 55%;
+  --input: 253 31% 25%;
+  --ring: 131 54% 78%;
+  --chart-1: 220 70% 50%;
+  --chart-2: 160 60% 45%;
+  --chart-3: 30 80% 55%;
+  --chart-4: 280 65% 60%;
+  --chart-5: 340 75% 55%;
+  --sidebar: 256 100% 14%;
+  --sidebar-foreground: 131 54% 78%;
+  --sidebar-primary: 131 54% 78%;
+  --sidebar-primary-foreground: 256 100% 14%;
+  --sidebar-accent: 253 31% 25%;
+  --sidebar-accent-foreground: 131 54% 78%;
+  --sidebar-border: 220 9% 55%;
+  --sidebar-ring: 131 54% 78%;
+}
+
+/* Add keyframes for animations */
+@keyframes fadeIn {
+  0% { opacity: 0; }
+  100% { opacity: 1; }
+}
+
+@keyframes slideUp {
+  0% { transform: translateY(20px); opacity: 0; }
+  100% { transform: translateY(0); opacity: 1; }
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(-10px); }
+}
+
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+  body {
+    @apply bg-background text-foreground;
+  }
+  
+  /* Enhanced animation utilities */
+  .animate-fade-in {
+    animation: fadeIn 0.5s ease-in-out;
+  }
+  
+  .animate-slide-up {
+    animation: slideUp 0.5s ease-out;
+  }
+  
+  .animate-float {
+    animation: float 6s ease-in-out infinite;
+  }
+  
+  .animate-hover-scale {
+    transition: transform 0.2s ease-out, box-shadow 0.3s ease-out;
+  }
+  
+  .animate-hover-scale:hover {
+    transform: scale(1.02);
+    box-shadow: 0 10px 25px rgba(13, 19, 33, 0.15);
+  }
+  
+  .animate-card-hover {
+    transition: all 0.3s ease-out;
+  }
+  
+  .animate-card-hover:hover {
+    transform: translateY(-2px) scale(1.01);
+    box-shadow: 0 20px 40px rgba(13, 19, 33, 0.12);
+  }
+  
+  .animate-button-hover {
+    transition: all 0.2s ease-out;
+  }
+  
+  .animate-button-hover:hover {
+    transform: translateY(-1px);
+    box-shadow: 0 8px 20px rgba(163, 171, 186, 0.2);
+  }
+}
