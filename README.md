@@ -1,36 +1,98 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Matheus Evangelista - Portfolio
 
-## Getting Started
+A modern, responsive portfolio website showcasing backend development expertise and professional experience. Built with Next.js 15 and optimized for performance, accessibility, and SEO.
 
-First, run the development server:
+## 🚀 Features
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+- **Modern Design**: Clean, professional interface with dark theme and smooth animations
+- **Responsive**: Fully optimized for all screen sizes (mobile, tablet, desktop)
+- **Performance**: Built with Next.js 15, Turbopack, and optimized assets
+- **Accessibility**: WCAG compliant with proper ARIA labels and keyboard navigation
+- **SEO Optimized**: Complete meta tags, Open Graph, and Twitter Cards
+
+## 🛠️ Tech Stack
+
+### Core Framework
+- **Next.js 15** with App Router
+- **React 19** with TypeScript
+- **Turbopack** for fast development builds
+
+### Styling & UI
+- **Tailwind CSS 4** for utility-first styling
+- **shadcn/ui** component system
+- **Lucide React** for icons
+- **CVA (Class Variance Authority)** for component variants
+- **Poppins & Geist Mono** fonts from Google Fonts
+
+## 📁 Project Structure
+
+```
+porti-app/
+├── app/                    # Next.js App Router
+│   ├── globals.css        # Global styles & design system
+│   ├── layout.tsx         # Root layout with metadata
+│   └── page.tsx           # Home page component
+├── components/            # React components
+│   ├── AboutSection.tsx   # About section with skills
+│   ├── ContactSection.tsx # Contact links (GitHub, Email, LinkedIn)
+│   ├── Footer.tsx         # Footer component
+│   ├── HeroSection.tsx    # Hero section with introduction
+│   └── Navbar.tsx         # Navigation with smooth scrolling
+├── lib/                   # Utilities
+│   └── utils.ts           # Tailwind utility functions
+├── public/               # Static assets
+│   ├── img/              # Images
+│   ├── manifest.json     # PWA manifest
+│   └── favicon.ico       # Favicon
+└── README.md             # Project documentation
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## 🚦 Getting Started
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+### Prerequisites
+- Node.js 18+ 
+- npm, yarn, pnpm, or bun
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+### Installation
 
-## Learn More
+1. **Clone the repository**
+   ```bash
+   git clone https://github.com/mtevangelista7/porti-app.git
+   cd porti-app
+   ```
 
-To learn more about Next.js, take a look at the following resources:
+2. **Install dependencies**
+   ```bash
+   npm install
+   # or
+   yarn install
+   # or
+   pnpm install
+   # or
+   bun install
+   ```
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+3. **Run development server**
+   ```bash
+   npm run dev
+   # or
+   yarn dev
+   # or
+   pnpm dev
+   # or
+   bun dev
+   ```
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+4. **Open in browser**
+   Navigate to [http://localhost:3000](http://localhost:3000)
 
-## Deploy on Vercel
+## 📄 License
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+This project is open source and available under the [MIT License](LICENSE).
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+## 👤 Contact
+
+**Matheus Evangelista**
+- GitHub: [@mtevangelista7](https://github.com/mtevangelista7)
+- LinkedIn: [matheus-evangelista-1920](https://www.linkedin.com/in/matheus-evangelista-1920/)
+- Email: matheus.evangelista7@protonmail.com
