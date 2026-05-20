@@ -1,12 +1,23 @@
+"use client";
+
+import { useLanguage } from "@/components/LanguageProvider";
+
 export default function Footer() {
+  const { t } = useLanguage();
   return (
-    <footer className="bg-primary-bg/60 border-t border-main-text/10">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
-        <div className="text-center">
-          <p className="text-xs sm:text-sm text-icon-text">
-            © 2025 Matheus Evangelista. All rights reserved.
-          </p>
-        </div>
+    <footer
+      style={{
+        borderTop: "1px solid var(--line)",
+        padding: "32px 0",
+        position: "relative",
+        zIndex: 1,
+      }}
+    >
+      <div
+        className="container-pad"
+        style={{ display: "flex", alignItems: "center" }}
+      >
+        <span className="mono-up dim">{t.footer.left}</span>
       </div>
     </footer>
   );
