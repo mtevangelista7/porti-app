@@ -29,9 +29,9 @@ export const metadata: Metadata = {
   metadataBase: new URL("https://matheus-evangelista.com"),
   title: "Matheus Evangelista — Backend Developer",
   description:
-    "Desenvolvedor .NET Pleno com 3+ anos em previdência privada, setor público e modernização de sistemas legados. Foco em integrações, APIs RESTful e SQL.",
+    "Desenvolvedor .NET Pleno com 4 anos em previdência privada, setor público e modernização de sistemas legados. Foco em integrações, APIs RESTful e SQL.",
   keywords:
-    ".NET developer, backend developer, C#, ASP.NET Core, Blazor, Azure, SQL Server, previdência privada, TCESP, São Paulo, desenvolvedor backend, integrations, APIs RESTful",
+    ".NET developer, backend developer, C#, ASP.NET Core, Blazor, Azure, SQL Server, previdência privada, Evertec, TCE-SP, JWT, São Paulo, desenvolvedor backend, integrations, APIs RESTful",
   authors: [{ name: "Matheus Evangelista" }],
   creator: "Matheus Evangelista",
   robots: "index, follow",
@@ -49,7 +49,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "Matheus Evangelista — Backend Developer",
     description:
-      ".NET backend developer. 3+ years. Pension funds, public sector, integrations.",
+      ".NET backend developer. Nearly 4 years. Pension funds, public sector, integrations.",
   },
 };
 
