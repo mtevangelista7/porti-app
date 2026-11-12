@@ -6,14 +6,27 @@ import { useReveal } from "@/lib/useReveal";
 
 type ContactLinkProps = {
   icon: ReactNode;
-  label: string;
+  label: ReactNode;
   sub: string;
 } & ({ href: string; onClick?: never } | { href?: never; onClick: () => void });
+
+// Prefer breaking a long email before the "@" instead of mid-word
+function breakEmail(email: string): ReactNode {
+  const at = email.indexOf("@");
+  if (at < 0) return email;
+  return (
+    <>
+      {email.slice(0, at)}
+      <wbr />
+      {email.slice(at)}
+    </>
+  );
+}
 
 function ContactLink({ icon, label, sub, href, onClick }: ContactLinkProps) {
   const sharedStyle: React.CSSProperties = {
     display: "grid",
-    gridTemplateColumns: "32px 1fr 110px",
+    gridTemplateColumns: "28px minmax(0, 1fr) auto",
     gap: 16,
     alignItems: "center",
     padding: "20px 22px",
@@ -44,18 +57,19 @@ function ContactLink({ icon, label, sub, href, onClick }: ContactLinkProps) {
         {icon}
       </span>
       <span
+        className="contact-link-label"
         style={{
           fontFamily: "var(--font-mono), ui-monospace, monospace",
           fontSize: 13,
+          lineHeight: 1.5,
           color: "var(--ink)",
-          overflow: "hidden",
-          textOverflow: "ellipsis",
-          whiteSpace: "nowrap",
+          minWidth: 0,
+          overflowWrap: "anywhere",
         }}
       >
         {label}
       </span>
-      <span className="mono-up dim" style={{ textAlign: "right" }}>
+      <span className="mono-up dim contact-link-sub" style={{ textAlign: "right", whiteSpace: "nowrap" }}>
         {sub}
       </span>
     </>
@@ -141,8 +155,8 @@ export default function ContactSection() {
           style={{
             marginTop: 64,
             display: "grid",
-            gridTemplateColumns: "minmax(0, 1.2fr) minmax(0, 1fr)",
-            gap: 80,
+            gridTemplateColumns: "minmax(0, 1fr) minmax(0, 1.1fr)",
+            gap: 64,
             alignItems: "end",
           }}
         >
@@ -173,9 +187,15 @@ export default function ContactSection() {
           >
             <ContactLink
               icon="@"
-              label={contact.email}
+              label={breakEmail(contact.email)}
               sub={copied ? contact.copied : contact.copyHint}
               onClick={onCopy}
+            />
+            <ContactLink
+              icon="↗"
+              label="+55 11 95779-9967"
+              sub="WHATSAPP"
+              href="https://wa.me/5511957799967"
             />
             <ContactLink
               icon="↗"
@@ -218,6 +238,20 @@ export default function ContactSection() {
           .contact-grid {
             grid-template-columns: 1fr !important;
             gap: 40px !important;
+          }
+        }
+        @media (max-width: 520px) {
+          :global(.contact-link) {
+            grid-template-columns: 28px minmax(0, 1fr) !important;
+            row-gap: 6px !important;
+            padding: 16px 18px !important;
+          }
+          :global(.contact-link > span:first-child) {
+            grid-row: span 2;
+            align-self: center;
+          }
+          :global(.contact-link-sub) {
+            text-align: left !important;
           }
         }
       `}</style>
